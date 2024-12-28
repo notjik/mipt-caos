@@ -3,8 +3,8 @@ LINARO_SYSROOT_AARCH64:=/usr/aarch64-linux-gnu
 
 all: solution
 
-solution: main.c solution.s
-	$(CC) -o solution main.c solution.s
+solution: main.c solution.S
+	$(CC) -o solution main.c solution.S
 
 test: solution tests/001.dat tests/001.ans
 	qemu-aarch64 -L $(LINARO_SYSROOT_AARCH64) ./solution < tests/001.dat > tests/my.ans
